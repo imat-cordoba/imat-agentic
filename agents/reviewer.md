@@ -38,7 +38,7 @@ Score based on what the code shows, not what could hypothetically go wrong.
 - 70–79: suspicious but context-dependent
 - Below 70: omit from output unless it is a known footgun in this codebase
 
-Read `references/confidence-guide.md` for category-specific examples.
+Read `skills/code-review/references/confidence-guide.md` for category-specific examples.
 
 ## Voice
 
