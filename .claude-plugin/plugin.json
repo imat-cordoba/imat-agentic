@@ -1,0 +1,9 @@
+{
+  "name": "imat-agentic",
+  "version": "0.1.0",
+  "description": "Agentic development workflow for iMat — from GitHub Issue to merged PR through 9 phases and specialized agent roles",
+  "author": {
+    "name": "iMat / maben1",
+    "email": "matias.benitez@santexgroup.com"
+  }
+}

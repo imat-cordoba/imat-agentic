@@ -1,0 +1,25 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "A file was just written or edited. If the current agentic workflow phase is 'implement' (check .claude/agentic/*/state.yaml for phase: implement), run the harness immediately: `.\\harness\\harness.ps1` on Windows or `bash harness/harness.sh` on Linux/macOS. If the harness fails, report the exact error output to the implementer and do not proceed to the next implementation step until it is fixed. If the phase is not 'implement', skip this check silently."
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "The conversation is about to be compacted due to context length. Before compacting, write a compact checkpoint to preserve workflow state. Find the active state.yaml in .claude/agentic/ (look for status: in_progress). Read it and write a summary to .claude/agentic/<branch>/compact-checkpoint.yaml with these fields: branch, phase, status, roles_done, key_decisions (from plan.md if available), blocking_findings (from review.md if available), next_steps (what the next phase should do). This file allows the workflow to resume after context overflow."
+          }
+        ]
+      }
+    ]
+  }
+}

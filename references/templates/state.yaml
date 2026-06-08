@@ -1,0 +1,36 @@
+task:
+  id: "issue-<N>"
+  title: ""
+  source: "github"           # github | manual
+  branch: "issue-<N>-<slug>"
+  worktree: "../imat-worktrees/issue-<N>-<slug>"
+  phase: "explore"           # explore | design | implement | review | finalize | done
+  status: "in_progress"      # in_progress | waiting | completed | blocked
+config_used:
+  profile: "full"            # full | balanced | quick | trivial | review-only
+  skipped_phases: []
+  router_rationale: ""
+  quality_preset: "sonnet"
+  confidence_threshold: 80
+  max_review_retries: 2
+  harness_profile: "full"
+roles_done: []               # [flow-router, explorer, architect, implementer, reviewer, knowledge]
+harness:
+  last_run: null             # ISO 8601 timestamp
+  result: null               # pass | fail
+design:
+  rethink_count: 0
+review:
+  attempts: 0
+  outcome: null              # approved | changes_requested
+pr:
+  url: null
+  number: null
+artifacts:
+  exploration: "exploration.md"
+  plan: "plan.md"
+  review: "review.md"
+  clarifications: "clarifications.md"
+decisions: []                # refs to ADRs, e.g. ["docs/adr/0003-...md"]
+blockers: []                 # description of active blockers
+notes: ""
